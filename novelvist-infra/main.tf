@@ -65,7 +65,7 @@ module "aks" {
   ssh_public_key = module.ssh_key.public_key_openssh
 }
 
-
+/*
 module "database" {
   source = "./modules/database"
 
@@ -78,12 +78,26 @@ module "database" {
   database_name          = var.database_config.database_name
   sku_name               = var.database_config.sku_name
   storage_mb             = var.database_config.storage_mb
-  version                = var.database_config.version
+  version                = "13"
 
   db_subnet_id = module.subnets.subnet_ids["database"]
   vnet_id      = module.vnet.vnet_id
   tags         = var.tags
 }
+*/
+module "database" {
+  source = "./modules/database"
+
+  resource_group_name = data.azurerm_resource_group.existing.name
+  location            = data.azurerm_resource_group.existing.location
+  database_config     = var.database_config
+
+  db_subnet_id        = module.subnets.subnet_ids["database"]
+  vnet_id             = module.vnet.vnet_id
+  tags                = var.tags
+}
+
+
 
 module "vm" {
   source = "./modules/vm"

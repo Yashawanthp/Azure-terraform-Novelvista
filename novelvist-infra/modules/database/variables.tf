@@ -39,13 +39,13 @@ variable "storage_mb" {
   description = "Storage size in MB"
   type        = number
 }
-/*
+
 variable "version" {
   description = "PostgreSQL version"
   type        = string
   default     = "13"
 }
-*/
+
 
 variable "db_subnet_id" {
   description = "Database subnet ID"

@@ -43,7 +43,7 @@ subnets = {
 aks_config = {
   cluster_name            = "novelvista-aks"
   dns_prefix              = "novelvistaaks"
-  kubernetes_version      = "1.27"
+  kubernetes_version      = "1.33.5"
   private_cluster_enabled = true
 
   system_node_pool = {
