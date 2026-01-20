@@ -3,7 +3,7 @@
 resource_group_name             = "azureskf-T"
 resource_provider_registrations = "none"
 location                        = "eastus"
-vnet_name                       = "three-tier-vnet"
+vnet_name                       = "skf-tier-vnet"
 
 # Core Configuration
 vnet_address_space = ["192.168.0.0/16"]
